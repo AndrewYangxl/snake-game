@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101611" />
+    <title>霓虹贪吃蛇</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">NEON SNAKE</p>
+          <h1>霓虹贪吃蛇</h1>
+          <p class="subtitle">吃掉能量果实，别撞到墙和自己。</p>
+        </div>
+        <button id="soundButton" class="icon-button" type="button" aria-label="切换音效" title="切换音效">
+          <span aria-hidden="true">♪</span>
+        </button>
+      </header>
+
+      <section class="scoreboard" aria-label="游戏数据">
+        <div class="score-card">
+          <span>当前得分</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="score-card">
+          <span>最高纪录</span>
+          <strong id="highScore">0</strong>
+        </div>
+        <div class="score-card">
+          <span>当前速度</span>
+          <strong id="speedLabel">标准</strong>
+        </div>
+      </section>
+
+      <section class="game-card">
+        <div class="canvas-wrap">
+          <canvas id="gameCanvas" width="600" height="600" aria-label="贪吃蛇游戏区域"></canvas>
+          <div id="overlay" class="overlay">
+            <div class="overlay-panel">
+              <p id="overlayKicker" class="overlay-kicker">准备好了吗？</p>
+              <h2 id="overlayTitle">开始游戏</h2>
+              <p id="overlayText">使用方向键或 WASD 控制移动</p>
+              <button id="primaryButton" class="primary-button" type="button">开始挑战</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls-row">
+          <label class="speed-control" for="speedSelect">
+            难度
+            <select id="speedSelect">
+              <option value="150">悠闲</option>
+              <option value="105" selected>标准</option>
+              <option value="72">极速</option>
+            </select>
+          </label>
+          <button id="pauseButton" class="secondary-button" type="button">暂停</button>
+          <button id="restartButton" class="secondary-button" type="button">重新开始</button>
+        </div>
+      </section>
+
+      <section class="mobile-controls" aria-label="触屏方向控制">
+        <button class="direction-button up" data-direction="up" type="button" aria-label="向上">↑</button>
+        <button class="direction-button left" data-direction="left" type="button" aria-label="向左">←</button>
+        <button class="direction-button down" data-direction="down" type="button" aria-label="向下">↓</button>
+        <button class="direction-button right" data-direction="right" type="button" aria-label="向右">→</button>
+      </section>
+
+      <footer>
+        <span><kbd>方向键</kbd> / <kbd>WASD</kbd> 移动</span>
+        <span><kbd>空格</kbd> 暂停</span>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
